@@ -38,7 +38,7 @@ try:
         # Validate function output
         print("\n---------- Computing Common Function f(x) ----------\n")
         for i in range(0, n):
-            print("Party_{} has computed f(x) = {}".format(
-                i, parties[i].calculateF()))
+            print("{} has computed f(x) = {}".format(
+                parties[i].name, parties[i].calculateF()))
 except ValueError:
     print("Invalid input! Please enter a valid integer.")
