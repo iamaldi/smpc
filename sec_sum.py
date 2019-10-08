@@ -28,17 +28,17 @@ try:
         # Secret sharing
         for i in range(0, n):
             for j in range(0, n):
-                parties[j].giveRandomValue(parties[i].getRandomValue(j))
+                parties[j].give_random_value(parties[i].get_random_value(j))
 
         # Share column sums
         for i in range(0, n):
             for j in range(0, n):
-                parties[i].giveColumnSum(parties[j].getColumnSum())
+                parties[i].give_column_sum(parties[j].get_column_sum())
 
         # Validate function output
         print("\n---------- Computing Common Function f(x) ----------\n")
         for i in range(0, n):
             print("{} has computed f(x) = {}".format(
-                parties[i].name, parties[i].calculateF()))
+                parties[i].name, parties[i].calculate_f()))
 except ValueError:
     print("Invalid input! Please enter a valid integer.")

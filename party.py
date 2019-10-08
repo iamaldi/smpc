@@ -2,33 +2,33 @@ from random import SystemRandom
 
 
 class Party:
-    def __init__(self, name, secretValue, n, M):
+    def __init__(self, name, secret_value, n, M):
         self.name = name
         self.M = M
-        self.__secretValue = secretValue
-        self.__randomValues = []
+        self.__secret_value = secret_value
+        self.__random_values = []
 
         # Shared information between Parties
         self.shares = []
-        self.columnSums = []
+        self.column_sums = []
 
         # Generate n-1 random values
         for i in range(0, n-1):
-            self.__randomValues.append(SystemRandom().randint(0, self.M))
-        self.__randomValues.append(
-            (self.__secretValue + self.M) - sum(self.__randomValues) % self.M)
+            self.__random_values.append(SystemRandom().randint(0, self.M))
+        self.__random_values.append(
+            (self.__secret_value + self.M) - sum(self.__random_values) % self.M)
 
-    def getRandomValue(self, position):
-        return self.__randomValues[position]
+    def get_random_value(self, position):
+        return self.__random_values[position]
 
-    def giveRandomValue(self, randomValue):
-        self.shares.append(randomValue)
+    def give_random_value(self, random_value):
+        self.shares.append(random_value)
 
-    def getColumnSum(self):
+    def get_column_sum(self):
         return sum(self.shares)
 
-    def giveColumnSum(self, columnSum):
-        self.columnSums.append(columnSum)
+    def give_column_sum(self, column_sum):
+        self.column_sums.append(column_sum)
 
-    def calculateF(self):
-        return sum(self.columnSums) % self.M
+    def calculate_f(self):
+        return sum(self.column_sums) % self.M
