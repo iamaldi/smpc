@@ -6,7 +6,7 @@ This project represents an implementation of Secure Summation with n Parties.
 ## Install
 
 #### Prerequisites
-You need to have Python 3.7 installed on your operating system.
+You can run this program using either Python 2 or Python 3.
 
 Clone this repository
 ```console
