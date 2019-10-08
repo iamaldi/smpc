@@ -18,22 +18,17 @@ class Party:
         self.__randomValues.append(
             (self.__secretValue + self.M) - sum(self.__randomValues) % self.M)
 
-    # Give a random value to another Party
     def getRandomValue(self, position):
         return self.__randomValues[position]
 
-    # Get a random value from another Party
     def giveRandomValue(self, randomValue):
         self.shares.append(randomValue)
 
-    # Give your column sum to another Party
     def getColumnSum(self):
         return sum(self.shares)
 
-    # Get a column sum from another Party
     def giveColumnSum(self, columnSum):
         self.columnSums.append(columnSum)
 
-    # Calculate common function
     def calculateF(self):
         return sum(self.columnSums) % self.M
