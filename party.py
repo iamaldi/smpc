@@ -1,5 +1,6 @@
 from random import SystemRandom
 
+
 class Party:
     def __init__(self, name, secretValue, n, M):
         self.name = name
@@ -14,7 +15,8 @@ class Party:
         # Generate n-1 random values
         for i in range(0, n-1):
             self.__randomValues.append(SystemRandom().randint(0, self.M))
-        self.__randomValues.append((self.__secretValue + self.M) - sum(self.__randomValues) % self.M)
+        self.__randomValues.append(
+            (self.__secretValue + self.M) - sum(self.__randomValues) % self.M)
 
     # Give a random value to another Party
     def getRandomValue(self, position):
