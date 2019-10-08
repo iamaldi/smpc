@@ -6,8 +6,8 @@
 from party import Party
 
 # Settings
-N = 100 # threshold
-M = 0 # 'uninitialized' modulo
+N = 100  # threshold
+M = 0  # 'uninitialized' modulo
 parties = []
 
 try:
@@ -19,9 +19,11 @@ try:
         M = n * N
 
         # Create parties
-        print("\n------------------------- Creating {} Parties -------------------------\n".format(n))
+        print("\n---------- Creating {} Parties ----------\n".format(n))
         for i in range(0, n):
-            parties.append(Party("Party_" + str(i), int(input("Enter a secret value for Party_{}: ".format(i))), n, M))
+            parties.append(Party("Party_" + str(i), int(
+                input("Enter a secret value for Party_{}: ".format(i))
+                ), n, M))
 
         # Secret sharing
         for i in range(0, n):
@@ -34,8 +36,9 @@ try:
                 parties[i].giveColumnSum(parties[j].getColumnSum())
 
         # Validate function output
-        print("\n------------------------- Computing Common Function f(x) -------------------------\n")
+        print("\n---------- Computing Common Function f(x) ----------\n")
         for i in range(0, n):
-            print("Party_{} has computed f(x) = {}".format(i, parties[i].calculateF()))
+            print("Party_{} has computed f(x) = {}".format(
+                i, parties[i].calculateF()))
 except ValueError:
     print("Invalid input! Please enter a valid integer.")
