@@ -39,7 +39,3 @@ try:
             print("Party_{} has computed f(x) = {}".format(i, parties[i].calculateF()))
 except ValueError:
     print("Invalid input! Please enter a valid integer.")
-
-
-
-
