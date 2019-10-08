@@ -38,3 +38,7 @@ Party_2 has computed f(x) = 61
 Party_3 has computed f(x) = 61
 
 ```
+
+## Contributions
+
+Improvements are more than welcome, so feel free to raise an issue or make a pull request.
