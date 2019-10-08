@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # ------------------------------------------------- #
-# Secure Multi-Party Communication
+# Secure Multi-Party Computation
 # Implementation of Secure Summation with n Parties
 # ------------------------------------------------- #
 from party import Party
