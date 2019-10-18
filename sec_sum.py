@@ -21,9 +21,7 @@ try:
         # Create parties
         print("\n---------- Creating {} Parties ----------\n".format(n))
         for i in range(0, n):
-            parties.append(Party("Party_" + str(i), int(
-                input("Enter a secret value for Party_{}: ".format(i))
-                ), n, M))
+            parties.append(Party("Party_" + str(i), n, M))
 
         # Secret sharing
         for i in range(0, n):

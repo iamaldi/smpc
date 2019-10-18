@@ -2,10 +2,11 @@ from random import SystemRandom
 
 
 class Party:
-    def __init__(self, name, secret_value, n, M):
+    def __init__(self, name, n, M):
         self.name = name
         self.M = M
-        self.__secret_value = secret_value
+        self.__secret_value = int(
+            input("Enter a secret value for {}: ".format(name)))
         self.__random_values = []
 
         # Shared information between Parties
